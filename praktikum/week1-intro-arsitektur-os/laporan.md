@@ -67,7 +67,7 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/Screenshot 2025-10-06 174215.png)
 
 ---
 
@@ -120,7 +120,7 @@ Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?
 Memahami sistem GitHub yang kompleks untuk seseorang yang awam terhadap ilmu komputer seperti saya.  
 - Bagaimana cara Anda mengatasinya? 
-Mencari tutorial dan mempelajarinya lebih lanjut, wqalaupun belum 100% memahami. 
+Mencari tutorial dan mempelajarinya lebih lanjut, walaupun belum 100% memahami. 
 
 ---
 
