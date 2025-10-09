@@ -73,8 +73,30 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
 - Jelaskan makna hasil percobaan.  
+1. uname -a
+Memberikan informasi sistem kernel yang digunakan 
+- Kernel yang digunakan (Linux)
+- Versi Linux (6.6.105+)
+- cs-890654789635-default = Nama host (komputer/server).
+- x86_64 = Arsitektur 64-bit.
+2.  lsmod | head
+Perintah lsmod | head menampilkan modul-modul yang aktif
+- Jaringan (IPv4 & IPv6)
+- Firewall (iptables/nftables)
+- Virtualisasi jaringan (veth)
+- Keamanan & kontrol trafik
+3. dmesg | head 
+Menampilkan log awal saat dinyalakan 
+- Info versi kernel
+- Opsi boot
+- Alokasi memori dari BIOS
+Log ini sangat penting untuk diagnosis awal dan mendeteksi masalah dalam perangkat keras.
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
+- Fungsi Kernel: Kernel adalah inti sistem operasi yang menghubungkan perangkat lunak dan perangkat keras. Fungsinya meliputi mengatur proses, memori, perangkat keras, sistem file, dan menjaga keamanan sistem.
+- system call: jembatan yang menghubungkan antara user dan juga kernel untuk meminta akses seperti mengakses file,membuat proses dll.
+- Arsitektur OS: Arsitektur sistem operasi adalah struktur internal OS yang mengatur kerja dan interaksi antar komponennya. Jenisnya antara lain monolithic, microkernel, layered, dan modular, masing-masing dengan kelebihan dalam kecepatan, keamanan, atau fleksibilitas. Tujuannya agar OS bekerja efisien, aman, dan mudah dikelola.
 - Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+Linux dan Windows adalah dua sistem operasi dengan perbedaan utama pada sifat, penggunaan, dan arsitektur. Linux bersifat open source, lebih aman, dan banyak digunakan di server serta pengembangan. Sementara Windows bersifat proprietary, lebih ramah pengguna, dan dominan di komputer pribadi dan kantor. Linux menggunakan struktur file berbasis direktori root ("/"), sedangkan Windows menggunakan sistem drive (C:, D:). Dari sisi keamanan, Linux lebih ketat dalam manajemen izin, sementara Windows lebih rentan terhadap malware.
 
 ---
 
@@ -95,8 +117,10 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?
+Memahami sistem GitHub yang kompleks untuk seseorang yang awam terhadap ilmu komputer seperti saya.  
+- Bagaimana cara Anda mengatasinya? 
+Mencari tutorial dan mempelajarinya lebih lanjut, wqalaupun belum 100% memahami. 
 
 ---
 
