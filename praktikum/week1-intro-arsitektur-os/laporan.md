@@ -26,10 +26,20 @@ Dengan mempelajari tentang materi tersebut,kita dapat memahami bahwa di dalam si
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Langkah-langkah yang dilakukan.
+- Buat akun GitHub dan berikan nama kalian.
+- Fork akun GitHub kalian ke GitHub pengajar atau dosen kalian.
+- Install VSCode,Ubuntu, dan GitBash
+- clone Git dengan mengklik clone
+- buat folder-klik kanan lalu pilih Git Bash Here
+- Untuk memngatur Git kalian,ketikkan git --global user.name "username GitHub Kalian"- git --global user.name "akun email kalian"
+- ketik " git clone "url yang disalin"
+- untuk push ke GitHubnya buka terminal dan ketikkan "git add .- git commit -m "pesan kalian"- git push origin main"
+- install Ubuntu di Microsoft Store (Windows 10/11)
+- Tunggu hingga penginstallan selesai
+- Lalu cari WSL lewat CMD
+- ketikkan username dan password kalian 
+- Setelah itu ketik sesuai yang ditugaskan dosen/pengajar.
 
 ---
 
@@ -68,7 +78,7 @@ dmesg | head
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/Screenshot 2025-10-06 174215.png)
-
+![Screenshot hasil](screenshots/Screenshot 2025-10-06 code.png)
 ---
 
 ## Analisis
@@ -101,26 +111,26 @@ Linux dan Windows adalah dua sistem operasi dengan perbedaan utama pada sifat, p
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Linux memiliki beberapa keuntungan, antara lain bersifat open source dan gratis, sehingga dapat digunakan dan dimodifikasi tanpa biaya. Sistem ini juga dikenal aman, stabil, dan ringan, membuatnya cocok untuk server maupun perangkat dengan spesifikasi rendah. Selain itu, Linux memiliki komunitas pengguna yang besar, sehingga dukungan dan dokumentasi mudah ditemukan.
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Sebutkan 3 fungsi utama Sistem Operasi]  
+   **Jawaban:Memanajemen Proses,Memanajemen Memori,Memanajemen I/O**  
+2. [Jelaskan perbedaan antara kernel mode da juga user mode]  
+   **Jawaban:Kernel mode adalah mode dengan akses penuh ke sistem, digunakan oleh inti sistem operasi. User mode memiliki akses terbatas dan digunakan oleh aplikasi, untuk menjaga keamanan dan tidak merusak sistem.**  
+3. [Sebutkan contoh OS dengan arsitektur monolithic dan mikrokernel]  
+   **Jawaban:Monolithic Kernel:Linux, MS-DOS, Unix - Microkernel:Minix, QNX, L4, GNU Hurd**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?
-Memahami sistem GitHub yang kompleks untuk seseorang yang awam terhadap ilmu komputer seperti saya.  
+**Memahami sistem GitHub yang kompleks untuk seseorang yang awam terhadap ilmu komputer seperti saya.**  
 - Bagaimana cara Anda mengatasinya? 
-Mencari tutorial dan mempelajarinya lebih lanjut, walaupun belum 100% memahami. 
+**Mencari tutorial dan mempelajarinya lebih lanjut, walaupun belum 100% memahami.** 
 
 ---
 
