@@ -202,9 +202,13 @@ Sertakan screenshot hasil percobaan atau diagram:
 ## Analisis
 - Jelaskan makna hasil percobaan.  
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)? 
 
 ---
+## Tugas pada Docs Week 2
+| No | Perintah | Fungsi | Analisis |
+|----|----------|--------|----------|
+| 1 | strace ls |melacak system call yang dilakukan ls saat membuka,menganalisis file dan menampilkan isi direktori|Dari strace ls, kita bisa lihat bahwa ls sebenarnya tidak langsung “menampilkan file”, tapi lewat serangkaian system call ke kernel|
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
