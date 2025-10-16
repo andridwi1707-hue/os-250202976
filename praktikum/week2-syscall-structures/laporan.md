@@ -1,6 +1,6 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu [2]
+Topik: Struktur System Call
 
 ---
 
@@ -44,7 +44,7 @@ System Call merupakan salah satu komponen utama pada Sistem operasi yang berfung
 Tuliskan potongan kode atau perintah utama:
 ```bash
 strace ls
-
+strace -e trace=open,read,write,close cat /etc/passwd
 dmesg | tail -n 10
 ```
 ## strace ls
@@ -195,15 +195,18 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![System call](screenshots/syscall%20(1).png)
 ![System call](screenshots/syscall%20(2).png)
 ![System call](screenshots/syscall%20(3).png)
+![System call](screenshots/diagram-syscall.png)
 
 
 ---
 
 ## Analisis
 - Jelaskan makna hasil percobaan.  
+Dari percobaan ini, bisa dilihat bahwa setiap tindakan sederhana di komputer sebenarnya melibatkan proses yang cukup rumit di belakang layar. Aplikasi tidak langsung berinteraksi dengan perangkat keras; semua berjalan lewat system call, yang bertindak sebagai jembatan antara program dan kernel. Hal ini menunjukkan bagaimana sistem operasi bekerja secara tertata dan aman, dengan lapisan-lapisan yang saling terhubung untuk menjaga semuanya tetap berjalan dengan benar.
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
+Percobaan ini memperkuat pemahaman kita tentang peran kernel dan system call seperti yang telah dipelajari sebelumnya. Kernel bertindak sebagai pengelola utama sistem operasi, mengatur penggunaan memori, perangkat keras, dan file. Sementara itu, system call berfungsi sebagai mekanisme resmi yang memungkinkan program meminta layanan dari kernel dengan cara yang aman dan terkontrol.
 - Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)? 
-
+Jika strace dijalankan, di Linux ia akan menampilkan semua system call program seperti open(), read(), dan write(), memperlihatkan interaksi dengan kernel. Di Windows, strace tidak tersedia, sehingga harus pakai alat lain seperti Process Monitor, yang menampilkan log Windows API, bukan system call Linux.
 ---
 ## Tugas pada Docs Week 2
 | No | Perintah | Fungsi | Analisis |
@@ -240,23 +243,31 @@ stat() / fstat() / lstat() – mendapatkan informasi file seperti ukuran, izin, 
 getpid() – mengambil ID proses saat ini.
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+System call berfungsi sebagai jembatan aman antara program user dan kernel, memastikan aplikasi bisa mengakses sumber daya sistem dengan aman. Kernel memproses setiap permintaan dan mengembalikan hasilnya ke program, sehingga semua operasi tetap terkontrol dan stabil.
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa fungsi utama system call dalam sistem operasi?
+   **Jawaban:Sebagai jembatan antara user dan kernel dan Untuk menjalankan perintah seperti membuka file,menganalisis memori dan menampilkannya**  
+2. Sebutkan 4 kategori system call yang umum digunakan.  
+   **Jawaban:Empat kategori system call yang umum digunakan adalah:
+    - File Management – untuk mengelola file, seperti open(), read(), write(), close().
+    - Process Management – untuk mengatur proses, seperti fork(), exec(), exit(), wait().
+    - Device Management – untuk mengakses dan mengontrol perangkat keras, seperti ioctl(), read(), write().
+    - Information Maintenance – untuk mengambil atau mengatur informasi sistem, seperti getpid(), alarm(), time()**
+3. Mengapa system call tidak bisa dipanggil langsung oleh user program?
+   **Jawaban:System call tidak bisa dipanggil langsung oleh user program karen agar sistem tetap stabil dan juga terkontrol,jika aplikasi bebas dalam mengakses kernel bisa berakibat kerusakan dalam sistem.**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? 
+ - Memahami dan juga menjalankan code yang ditugaskan sebagai seseorang yang awam akan sistem komputer. 
+- Bagaimana cara Anda mengatasinya?
+ - Menggunakan analogi agar mempermudah memahami tentang system call dan juga sustem operasi.  
+
 
 ---
 
