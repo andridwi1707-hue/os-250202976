@@ -209,6 +209,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 | No | Perintah | Fungsi | Analisis |
 |----|----------|--------|----------|
 | 1 | strace ls |melacak system call yang dilakukan ls saat membuka,menganalisis file dan menampilkan isi direktori|Dari strace ls, kita bisa lihat bahwa ls sebenarnya tidak langsung “menampilkan file”, tapi lewat serangkaian system call ke kernel|
+| 2 | strace -e trace=open,read,write,close cat /etc/passwd |Perintah strace -e trace=open,read,write,close cat /etc/passwd digunakan untuk melihat system call yang terkait dengan membuka file, membaca isi file, menulis ke layar, dan menutup file.|Baik strace ls maupun strace cat /etc/passwd memperlihatkan bagaimana program berinteraksi dengan kernel melalui system call.|
+
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
