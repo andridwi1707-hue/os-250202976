@@ -211,8 +211,33 @@ Sertakan screenshot hasil percobaan atau diagram:
 | 1 | strace ls |melacak system call yang dilakukan ls saat membuka,menganalisis file dan menampilkan isi direktori|Dari strace ls, kita bisa lihat bahwa ls sebenarnya tidak langsung “menampilkan file”, tapi lewat serangkaian system call ke kernel|
 | 2 | strace -e trace=open,read,write,close cat /etc/passwd |Perintah strace -e trace=open,read,write,close cat /etc/passwd digunakan untuk melihat system call yang terkait dengan membuka file, membaca isi file, menulis ke layar, dan menutup file.|Baik strace ls maupun strace cat /etc/passwd memperlihatkan bagaimana program berinteraksi dengan kernel melalui system call.|
 | 3 | dmesg tail -n 10 | Perintah dmesg tail -n 10 digunakan untuk melihat 10 pesan terakhir dari kernel Linux. Kernel menyimpan berbagai catatan seperti booting, driver, dan status hardware, dan dengan perintah ini kita bisa cepat memeriksa informasi atau error terbaru di sistem.| Perintah dmesg tail -n 10 memungkinkan kita melihat aktivitas kernel terbaru. Dari outputnya, kita bisa memeriksa apakah ada error hardware, driver, atau masalah sistem yang baru terjadi. Ini berguna untuk debugging sistem, monitoring booting, atau mengecek status perangkat tanpa harus membuka log lengkap, karena hanya menampilkan 10 baris terakhir saja.|
+## 1. Mengapa system call penting untuk keamanan OS?
+ System call sangat penting bagi keamanan sistem operasi karena berfungsi sebagai jembatan yang terkontrol antara program aplikasi dan kernel. Program yang berjalan di user space tidak memiliki akses langsung ke memori kernel, perangkat keras, atau file-file sensitif. Melalui system call, kernel dapat memverifikasi dan memvalidasi setiap permintaan dari aplikasi sebelum dilaksanakan, memastikan bahwa program hanya melakukan operasi yang diizinkan. Dengan mekanisme ini, risiko aplikasi melakukan tindakan berbahaya, seperti merusak memori kernel atau mengakses data rahasia, dapat diminimalkan. Dengan kata lain, system call berperan sebagai lapisan pengaman utama yang menjaga integritas dan stabilitas sistem operasi. 
 
+## 2. Bagaimana OS memastikan transisi user–kernel berjalan aman?
+Sistem operasi modern dirancang dengan memisahkan user space dan kernel space untuk menjaga keamanan dan stabilitas sistem. Program aplikasi yang berjalan di user space memiliki hak akses terbatas dan tidak dapat langsung mengakses sumber daya kritis seperti memori kernel, perangkat keras, atau file sistem yang sensitif. Namun, agar aplikasi dapat menggunakan layanan kernel, misalnya membaca file, menulis data, atau membuat proses baru, diperlukan transisi dari user mode ke kernel mode melalui mekanisme yang disebut system call. Keamanan transisi ini menjadi sangat penting, karena kesalahan atau eksploitasi pada tahap ini dapat membahayakan seluruh sistem.
+## 3 . Sebutkan contoh system call yang sering digunakan di Linux
+Beberapa contoh system call yang sering digunakan di Linux antara lain:
 
+open() – digunakan untuk membuka file atau perangkat.
+
+read() – membaca data dari file descriptor.
+
+write() – menulis data ke file descriptor atau perangkat.
+
+close() – menutup file descriptor setelah selesai digunakan.
+
+fork() – membuat proses baru (menyalin proses saat ini).
+
+execve() – menjalankan program baru menggantikan proses saat ini.
+
+mmap() – memetakan file atau perangkat ke memori proses.
+
+brk() / sbrk() – mengatur ukuran heap program.
+
+stat() / fstat() / lstat() – mendapatkan informasi file seperti ukuran, izin, dan waktu modifikasi.
+
+getpid() – mengambil ID proses saat ini.
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
