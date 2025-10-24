@@ -14,7 +14,9 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+> 1. Memahami cara menggunakan perintah dasar Linux untuk mengelola file dan direktori.
+2. Mempelajari konsep permission dan ownership dalam sistem file Linux.
+3. Mengetahui cara mengatur keamanan dan hak akses file menggunakan perintah chmod dan chown.
 
 ---
 
@@ -149,14 +151,17 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 2. [Apa arti dari kode permission rwxr-xr--]  
    **Jawaban:Kode rwxr-xr-- berarti pemilik dapat membaca, menulis, dan menjalankan file, grup hanya dapat membaca dan menjalankan, sedangkan pengguna lain hanya dapat membaca.v**  
 3. [Jelaskan perbedaan antara chown dan chmod]  
-   **Jawaban:**  
+   **Jawaban:Perintah chown digunakan untuk mengubah pemilik (owner) atau grup dari sebuah file atau direktori, sedangkan chmod digunakan untuk mengubah izin akses (permission) file atau direktori, seperti hak untuk membaca, menulis, atau menjalankan.**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? 
+* Menjalankan perintah yang ditugaskan pada versi cloud agar meminimalisir masalah pada laptop pribadi
+- Bagaimana cara Anda mengatasinya? 
+* Bertanya kepada teman,menggunakan analogi agar dapat muda dipahami
+
 
 ---
 
