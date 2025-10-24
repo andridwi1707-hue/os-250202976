@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [3]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: Pengelolaan file dan direktori menggunakan perintah dasar Linux, serta konsep permission dan ownership.]
 
 ---
 
@@ -158,9 +158,9 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini? 
-* Menjalankan perintah yang ditugaskan pada versi cloud agar meminimalisir masalah pada laptop pribadi
+  Menjalankan perintah yang ditugaskan pada versi cloud agar meminimalisir masalah pada laptop pribadi
 - Bagaimana cara Anda mengatasinya? 
-* Bertanya kepada teman,menggunakan analogi agar dapat muda dipahami
+  Bertanya kepada teman,menggunakan analogi agar dapat muda dipahami
 
 
 ---
