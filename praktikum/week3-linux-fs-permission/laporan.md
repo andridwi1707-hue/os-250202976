@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu [3]
 Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ---
@@ -20,7 +20,7 @@ Contoh:
 
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
-Seluruh data dalam Linux disimpan dalam file dan direktori. File adalah tempat penyimpanan data, sementara direktori digunakan untuk mengelompokkan file. File dan direktori diatur dan disusun menggunakan perintah-perintah dasar seperti ls, cd, cp, mv, rm, dan mkdir. Selain itu, Linux juga menerapkan permission dan ownership pada file agar tidak sembarang orang bisa membaca, menulis, atau menjalankan sebuah file. Peraturan tersebut dapat diubah menggunakan perintah chmod dan chown untuk permission kepemilikan, sehingga data akan terlindungi dari pihak-pihak yang tidak bertanggungjawab.
+ Seluruh data dalam Linux disimpan dalam file dan direktori. File adalah tempat penyimpanan data, sementara direktori digunakan untuk mengelompokkan file. File dan direktori diatur dan disusun menggunakan perintah-perintah dasar seperti ls, cd, cp, mv, rm, dan mkdir. Selain itu, Linux juga menerapkan permission dan ownership pada file agar tidak sembarang orang bisa membaca, menulis, atau menjalankan sebuah file. Peraturan tersebut dapat diubah menggunakan perintah chmod dan chown untuk permission kepemilikan, sehingga data akan terlindungi dari pihak-pihak yang tidak bertanggungjawab.
 ---
 
 ## Langkah Praktikum
@@ -128,23 +128,27 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
+- Jelaskan makna hasil percobaan. 
+ Makna dari percobaan tadi adalah untuk memahami cara mengelola file di Linux, khususnya dalam hal pembuatan file, pengaturan izin (permission), dan perubahan kepemilikan (ownership). Melalui percobaan tersebut, kita belajar bagaimana membuat file baru, memberi izin akses hanya kepada pemilik, serta mengubah pemilik file menjadi pengguna root agar file lebih aman dan terkontrol. 
+- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS). 
+ Percobaan ini menunjukkan bagaimana perintah Linux bekerja melalui kernel menggunakan system call. Kernel bertugas mengatur akses ke file dan sumber daya sistem. Saat pengguna menjalankan perintah seperti chmod atau chown, shell menerjemahkannya menjadi system call yang diproses oleh kernel. Hal ini menggambarkan hubungan antara pengguna, shell, dan kernel dalam arsitektur sistem operasi. 
 - Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+ Linux mengatur izin file lewat perintah terminal, sedangkan Windows lewat tampilan grafis. Linux memakai struktur root (/), sementara Windows memakai drive (C:).
 
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-
+- Sistem permission di Linux mengatur siapa yang boleh menuli,menjalankan, dan mengubah file.
+- Setiap perintah yang dijalankan melibatkan kerja kernel untuk mengatur akses dan keamanan file.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
+1. [Apa fungsi dari perintah chmod?]  
+   **Jawaban:MEngubah izin akses pada file direktori dalam sistem Linux,pengguna dapat membaca,menulis atau menjalankan file tersebut.**  
+2. [Apa arti dari kode permission rwxr-xr--]  
+   **Jawaban:Kode rwxr-xr-- berarti pemilik dapat membaca, menulis, dan menjalankan file, grup hanya dapat membaca dan menjalankan, sedangkan pengguna lain hanya dapat membaca.v**  
+3. [Jelaskan perbedaan antara chown dan chmod]  
    **Jawaban:**  
 
 ---
