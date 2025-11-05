@@ -6,8 +6,8 @@ Topik: [Penjadwalan CPU – FCFS dan SJF]
 
 ## Identitas
 - **Nama**  : [Andri Dwi Yuliyanto]  
-- **NIM**   : [1IKRB]  
-- **Kelas** : [Kelas]
+- **NIM**   : [250202976]  
+- **Kelas** : [1IKRB]
 
 ---
 
@@ -77,25 +77,23 @@ Penjadwalan CPU adalah mekanisme sistem operasi untuk menentukan urutan eksekusi
    - Jelaskan kondisi kapan SJF lebih unggul dari FCFS dan sebaliknya.  
    - Tambahkan kesimpulan singkat di akhir laporan.
 
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
 
 ---
 
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+Membuat tabel FCFS yang diperintahkan
+Membuat tabel SJF yang diperintahkan
+Bandingkan antara FCFS dan SJF
 ```
 
 ---
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/FCFS%20DAN%20SJF%20(1).png)
+![Screenshot hasil](screenshots/FCFS%20DAN%20SJF%20(2).png)
 
 ---
 ## Tugas
@@ -110,25 +108,58 @@ Sertakan screenshot hasil percobaan atau diagram:
 | Total | ... | ... | ... | ... | 35 | 59 |
 | Average | ... | ... | ... | ... | 8.75 | 14.75 |
 
-## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+Grant 
+| P1 | P2 | P3 | P4 |
+0 6 14 21 24
+
+# Eksperiment 2
+| Proses | Arrival |	Burst |	Start |	Finish |	Waiting Time (WT) | Turnaround Time (TAT) |
+|--------|---------|-------|--------|---------|-------------------|-----------------------|
+| P1 | 0 |	6 | 0 | 6 |	0 | 6 |
+| P4 | 3 |	3 | 6 | 9 |	3 | 6 |
+| P3 | 2 |	7 | 9 | 16 | 7 | 14 |
+| P2 | 1 | 8 | 16 | 24 | 15 |	23 |
+| Total | ... | ... | ... | ... | 45 | 59 |
+| Average | ... | ... | ... | ... | 6.25 | 12.25 |
+
+# PERBANDINGAN ANTARA SJF DAN FCFS
+| Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
+|------------|------------------|----------------------|------------|-------------|
+| FCFS | 8.75 | 14.75 | Sederhana dan mudah diterapkan | Tidak efisien untuk proses panjang |
+| SJF | 6.25 | 12.25 | Optimal untuk job pendek | Menyebabkan *starvation* pada job panjang |
+
+# Analisis
+ - Analisis Perbandingan
+ Berdasarkan perhitungan pada eksperimen sebelumnya, perbandingan rata-rata waktu sebagai berikut:
+ Average Waiting Time (WT): FCFS = 8.75, SJF = 6.25.
+ Average Turnaround Time (TAT): FCFS = 14.75, SJF = 12.25.
+ Dari angka di atas terlihat bahwa SJF memberikan rata-rata WT dan TAT yang lebih kecil dibandingkan FCFS pada skenario data proses yang diberikan.
+ - Kapan SJF lebih unggul dan kapan FCFS lebih cocok
+ SJF lebih unggul ketika:
+ Mayoritas proses memiliki durasi eksekusi yang pendek atau ada banyak pekerjaan kecil; SJF memproses yang singkat terlebih dahulu sehingga mengurangi waktu tunggu rata-rata.
+ Sistem bersifat batch atau non-interaktif di mana estimasi burst time dapat dipercaya.
+ Tujuan utama adalah meminimalkan rata-rata waktu tunggu/turnaround.
+ FCFS lebih cocok ketika:
+ Keadilan berdasarkan urutan kedatangan penting (mis. antrian layanan yang harus dilayani sesuai urutan).
+ Sistem interaktif atau real-time yang memerlukan prediktabilitas dan sederhana dalam implementasi.
+ Estimasi burst time tidak dapat diandalkan atau tidak tersedia.
+
+
 
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-
+SJF menghasilkan waktu tunggu dan waktu penyelesaian rata-rata yang lebih rendah dibanding FCFS. FCFS lebih sederhana dan adil, sedangkan SJF lebih efisien untuk proses pendek. Secara umum, SJF lebih unggul dalam efisiensi, sementara FCFS lebih baik dalam kesederhanaan dan keadilan.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Apa perbedaan utama antara FCFS dan SJF? singkat saja]  
+   **Jawaban:Perbedaan utamanya, FCFS menjalankan proses berdasarkan urutan kedatangan, sedangkan SJF menjalankan proses dengan waktu eksekusi paling singkat terlebih dahulu.**  
+2. [Mengapa SJF dapat menghasilkan rata-rata waktu tunggu minimum?]  
+   **Jawaban:Karena SJF memprioritaskan proses dengan waktu eksekusi paling singkat, sehingga proses cepat selesai lebih dulu dan mengurangi waktu tunggu total bagi semua proses.**  
+3. [Apa kelemahan SJF jika diterapkan pada sistem interaktif?]  
+   **Jawaban:Kelemahan SJF pada sistem interaktif adalah proses yang lama bisa terus tertunda (starvation) karena selalu kalah prioritas dari proses yang lebih pendek, dan sulit memperkirakan waktu eksekusi setiap proses secara akurat.**  
 
 ---
 
