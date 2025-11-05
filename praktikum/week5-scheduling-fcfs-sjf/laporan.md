@@ -166,7 +166,9 @@ SJF menghasilkan waktu tunggu dan waktu penyelesaian rata-rata yang lebih rendah
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
+ Mencoba memahami hal yang sangat awam bagi saya
 - Bagaimana cara Anda mengatasinya?  
+ Menggunakan metode "bahasa bayi" dan juga analogi agar mudah dipahami
 
 ---
 
