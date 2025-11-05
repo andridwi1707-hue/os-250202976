@@ -107,6 +107,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 | P2 |	1 |	8 |	6 | 14 |	5 | 13 |
 | P3 |	2 |	7 |	14 | 21 | 12 | 19 |
 | P4 |	3 |	3 |	21 | 24 | 18 |	21 |
+| Total | ... | ... | ... | ... | 35 | 59 |
+| Average | ... | ... | ... | ... | 8.75 | 14.75 |
 
 ## Analisis
 - Jelaskan makna hasil percobaan.  
