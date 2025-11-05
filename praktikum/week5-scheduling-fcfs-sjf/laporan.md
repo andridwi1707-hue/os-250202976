@@ -101,11 +101,12 @@ Sertakan screenshot hasil percobaan atau diagram:
 ## Tugas
 
 # Eksperiment 1
-|Proses|	Arrival|	Burst|	Start|	Finish|	Waiting Time (WT)|	Turnaround Time (TAT)|
-|P1 |	0|	6|	0|	6|	0|	6|
-|P2|	1|	8|	6|	14|	5|	13|
-|P3|	2|	7|	14|	21|	12|	19|
-|P4|	3|	3|	21	|24|	18|	21|
+| Proses | Arrival |	Burst | Start | Finish | Waiting Time (WT) | Turnaround Time (TAT) |
+|--------|---------|-------|-------|--------|-------------------|-----------------------|
+| P1 |	0 |	6 |	0 | 6 |	0 | 6 |
+| P2 |	1 |	8 |	6 | 14 |	5 | 13 |
+| P3 |	2 |	7 |	14 | 21 | 12 | 19 |
+| P4 |	3 |	3 |	21 | 24 | 18 |	21 |
 
 ## Analisis
 - Jelaskan makna hasil percobaan.  
