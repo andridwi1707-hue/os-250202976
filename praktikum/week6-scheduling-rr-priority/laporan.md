@@ -1,12 +1,12 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu [6]
+Topik: [Schedulling RR and Priority]
 
 ---
 
 ## Identitas
 - **Nama**  : [Andri Dwi Yuliyanto]  
-- **NIM**   : [NIM Mahasiswa]  
+- **NIM**   : [250202976]  
 - **Kelas** : [1IKRB]
 
 ---
@@ -82,9 +82,7 @@ Mahasiswa akan melakukan simulasi perhitungan manual untuk menghitung waiting ti
    git commit -m "Minggu 6 - CPU Scheduling RR & Priority"
    git push origin main
    ```  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+
 
 ---
 
@@ -120,31 +118,39 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
 - Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+Hasil percobaan menunjukkan bahwa pada Round Robin, semua proses mendapat giliran secara adil, tetapi waktu tunggunya lebih lama karena harus menunggu giliran berulang.
+Sedangkan pada Priority Scheduling (Non-Preemptive), proses dengan prioritas lebih tinggi dijalankan lebih dulu sehingga rata-rata waktu tunggu dan waktu total menjadi lebih kecil.
+Singkatnya, RR menekankan keadilan, sementara Priority menekankan efisiensi berdasarkan tingkat kepentingan proses.
+
 
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. Round Robin memberi giliran merata, tetapi waktu tunggu rata-ratanya lebih besar.
+2. Priority Scheduling membuat proses penting selesai lebih cepat.
+3. Secara umum, Priority lebih efisien, sedangkan RR lebih adil dalam pembagian waktu CPU.
+
+
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Apa perbedaan utama antara Round Robin dan Priority Scheduling?]  
+   **Jawaban:Round Robin berbasis giliran waktu (time quantum), sedangkan Priority Scheduling berbasis tingkat kepentingan (prioritas) proses.**  
+2. [Apa pengaruh besar/kecilnya time quantum terhadap performa sistem?]  
+   **Jawaban:Time quantum kecil bikin proses sering berganti sehingga respons cepat tapi overhead tinggi, sedangkan quantum besar bikin overhead rendah tapi respons lambat.**  
+3. [Mengapa algoritma Priority dapat menyebabkan starvation?]  
+   **Jawaban:Karena proses dengan prioritas rendah bisa terus tertunda jika selalu ada proses prioritas tinggi yang datang.**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
+Memahami cara kerja Round Robin dan Juga Priority.  
 - Bagaimana cara Anda mengatasinya?  
-
+Belajar dan belajar,menggunakan analogi agar mudah dipahami
 ---
 
 **Credit:**  
