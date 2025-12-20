@@ -114,11 +114,11 @@ dmesg | head
 
  ```
 2. **Tabel Hasil Analisis**
-| Proses | Allocation | Request | Status   |
-| ------ | ---------- | ------- | -------- |
-| P1     | R1         | R2      | Deadlock |
-| P2     | R2         | R3      | Deadlock |
-| P3     | R3         | R1      | Deadlock |
+ | Proses | Allocation | Request | Status   |
+ | ------ | ---------- | ------- | -------- |
+ | P1     | R1         | R2      | Deadlock |
+ | P2     | R2         | R3      | Deadlock |
+ | P3     | R3         | R1      | Deadlock |
 
 ---
 
