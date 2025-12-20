@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [10]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: [Manajemen Memori – Page Replacement FIFO & LRU]
 
 ---
 
@@ -14,7 +14,7 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
-> 1. Mengimplementasikan algoritma page replacement FIFO dalam program.
+1. Mengimplementasikan algoritma page replacement FIFO dalam program.
 2. Mengimplementasikan algoritma page replacement LRU dalam program.
 3. Menjalankan simulasi page replacement dengan dataset tertentu.
 4. Membandingkan performa FIFO dan LRU berdasarkan jumlah *page fault*.
@@ -158,58 +158,58 @@ print_result("LRU Simulation", lru_result, lru_fault)
 
 ---
 ## Tugas
-## Implementasi FIFO
-| Referensi | Frame (setelah eksekusi) | Hit/Fault        |
-| --------- | ------------------------ | ---------------- |
-| 7         | 7 - -                    | Fault            |
-| 0         | 7 0 -                    | Fault            |
-| 1         | 7 0 1                    | Fault            |
-| 2         | 2 0 1                    | Fault (7 keluar) |
-| 0         | 2 0 1                    | **Hit**          |
-| 3         | 2 3 1                    | Fault (0 keluar) |
-| 0         | 2 3 0                    | Fault (1 keluar) |
-| 4         | 4 3 0                    | Fault (2 keluar) |
-| 2         | 4 2 0                    | Fault (3 keluar) |
-| 3         | 4 2 3                    | Fault (0 keluar) |
-| 0         | 0 2 3                    | Fault (4 keluar) |
-| 3         | 0 2 3                    | **Hit**          |
-| 2         | 0 2 3                    | **Hit**          |
-Hasil FIFO:
-Page Fault = 10
-Page Hit = 3
+1. **Implementasi FIFO**
+ | Referensi | Frame (setelah eksekusi) | Hit/Fault        |
+ | --------- | ------------------------ | ---------------- |
+ | 7         | 7 - -                    | Fault            |
+ | 0         | 7 0 -                    | Fault            |
+ | 1         | 7 0 1                    | Fault            |
+ | 2         | 2 0 1                    | Fault (7 keluar) |
+ | 0         | 2 0 1                    | **Hit**          |
+ | 3         | 2 3 1                    | Fault (0 keluar) |
+ | 0         | 2 3 0                    | Fault (1 keluar) |
+ | 4         | 4 3 0                    | Fault (2 keluar) |
+ | 2         | 4 2 0                    | Fault (3 keluar) |
+ | 3         | 4 2 3                    | Fault (0 keluar) |
+ | 0         | 0 2 3                    | Fault (4 keluar) |
+ | 3         | 0 2 3                    | **Hit**          |
+ | 2         | 0 2 3                    | **Hit**          |
+ Hasil FIFO:
+ Page Fault = 10
+ Page Hit = 3
 ## Implementasi LRU
-| Referensi | Frame (setelah eksekusi) | Hit/Fault                     |
-| --------- | ------------------------ | ----------------------------- |
-| 7         | 7 - -                    | Fault                         |
-| 0         | 7 0 -                    | Fault                         |
-| 1         | 7 0 1                    | Fault                         |
-| 2         | 2 0 1                    | Fault (7 paling lama dipakai) |
-| 0         | 2 0 1                    | **Hit**                       |
-| 3         | 2 0 3                    | Fault (1 paling lama dipakai) |
-| 0         | 2 0 3                    | **Hit**                       |
-| 4         | 4 0 3                    | Fault (2 paling lama dipakai) |
-| 2         | 4 0 2                    | Fault (3 paling lama dipakai) |
-| 3         | 4 3 2                    | Fault (0 paling lama dipakai) |
-| 0         | 0 3 2                    | Fault (4 paling lama dipakai) |
-| 3         | 0 3 2                    | **Hit**                       |
-| 2         | 0 3 2                    | **Hit**                       |
-Hasil LRU:
-Page Fault = 9
-Page Hit = 4
+ | Referensi | Frame (setelah eksekusi) | Hit/Fault                     |
+ | --------- | ------------------------ | ----------------------------- |
+ | 7         | 7 - -                    | Fault                         |
+ | 0         | 7 0 -                    | Fault                         |
+ | 1         | 7 0 1                    | Fault                         |
+ | 2         | 2 0 1                    | Fault (7 paling lama dipakai) |
+ | 0         | 2 0 1                    | **Hit**                       |
+ | 3         | 2 0 3                    | Fault (1 paling lama dipakai) |
+ | 0         | 2 0 3                    | **Hit**                       |
+ | 4         | 4 0 3                    | Fault (2 paling lama dipakai) |
+ | 2         | 4 0 2                    | Fault (3 paling lama dipakai) |
+ | 3         | 4 3 2                    | Fault (0 paling lama dipakai) |
+ | 0         | 0 3 2                    | Fault (4 paling lama dipakai) |
+ | 3         | 0 3 2                    | **Hit**                       |
+ | 2         | 0 3 2                    | **Hit**                       |
+ Hasil LRU:
+ Page Fault = 9
+ Page Hit = 4
 ## Analisis Perbandingan
-| Algoritma | Jumlah Page Fault | Keterangan                                                  |
-| --------- | ----------------- | ----------------------------------------------------------- |
-| FIFO      | 10                | Sederhana, tidak adaptif terhadap pola akses                |
-| LRU       | 9                 | Lebih adaptif, mempertahankan halaman yang sering digunakan |
-Analisis Perbedaan Page Fault:
-Mengapa jumlahnya berbeda?
- FIFO hanya melihat urutan masuk
- LRU melihat pola penggunaan aktual
- Pada reference string ini, beberapa halaman seperti 0, 2, dan 3 sering digunakan kembali → LRU lebih “cerdas”   mempertahankannya
-Algoritma paling efisien:
+ | Algoritma | Jumlah Page Fault | Keterangan                                                  |
+ | --------- | ----------------- | ----------------------------------------------------------- |
+ | FIFO      | 10                | Sederhana, tidak adaptif terhadap pola akses                |
+ | LRU       | 9                 | Lebih adaptif, mempertahankan halaman yang sering digunakan |
+ Analisis Perbedaan Page Fault:
+ Mengapa jumlahnya berbeda?
+ - FIFO hanya melihat urutan masuk
+ - LRU melihat pola penggunaan aktual
+ - Pada reference string ini, beberapa halaman seperti 0, 2, dan 3 sering digunakan kembali → LRU lebih “cerdas”   mempertahankannya
+ Algoritma paling efisien:
  LRU lebih efisien, karena:
--Page fault lebih sedikit
--Lebih sesuai dengan prinsip locality of reference
+ - Page fault lebih sedikit
+ - Lebih sesuai dengan prinsip locality of reference
 Mendekati perilaku optimal (OPT), walau lebih kompleks diimplementasikan
 ---
 
