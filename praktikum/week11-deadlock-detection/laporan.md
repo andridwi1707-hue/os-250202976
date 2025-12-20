@@ -21,7 +21,7 @@ Tuliskan tujuan praktikum minggu ini.
 ---
 
 ## Dasar Teori
-Deadlock dalam sistem operasi adalah kondisi ketika dua atau lebih proses saling menunggu sumber daya yang sedang dipegang proses lain sehingga tidak ada satu pun proses yang dapat melanjutkan eksekusi. Deteksi deadlock dilakukan dengan menganalisis hubungan ketergantungan antara proses dan resource, salah satunya menggunakan wait-for graph yang merepresentasikan proses sebagai simpul dan hubungan tunggu sebagai sisi. Jika pada graf tersebut terbentuk siklus, maka sistem berada dalam kondisi deadlock. Secara teori, deadlock hanya dapat terjadi apabila empat kondisi terpenuhi secara bersamaan, yaitu mutual exclusion, hold and wait, no preemption, dan circular wait. Pendekatan deteksi deadlock bertujuan mengidentifikasi kondisi ini agar sistem dapat mengambil tindakan pemulihan yang tepat.
+ Deadlock dalam sistem operasi adalah kondisi ketika dua atau lebih proses saling menunggu sumber daya yang sedang dipegang proses lain sehingga tidak ada satu pun proses yang dapat melanjutkan eksekusi. Deteksi deadlock dilakukan dengan menganalisis hubungan ketergantungan antara proses dan resource, salah satunya menggunakan wait-for graph yang merepresentasikan proses sebagai simpul dan hubungan tunggu sebagai sisi. Jika pada graf tersebut terbentuk siklus, maka sistem berada dalam kondisi deadlock. Secara teori, deadlock hanya dapat terjadi apabila empat kondisi terpenuhi secara bersamaan, yaitu mutual exclusion, hold and wait, no preemption, dan circular wait. Pendekatan deteksi deadlock bertujuan mengidentifikasi kondisi ini agar sistem dapat mengambil tindakan pemulihan yang tepat.
 ---
 
 ## Langkah Praktikum
