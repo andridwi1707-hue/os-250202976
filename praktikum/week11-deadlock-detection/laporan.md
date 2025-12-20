@@ -1,6 +1,6 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul top"]
+# Laporan Praktikum Minggu [11]
+Topik: [Simulasi dan Deteksi Deadlock]
 
 ---
 
