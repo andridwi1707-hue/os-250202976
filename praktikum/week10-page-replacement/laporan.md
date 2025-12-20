@@ -199,6 +199,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
  Page Fault = 9
  Page Hit = 4
 3. **Analisis Perbandingan**
+ 
  | Algoritma | Jumlah Page Fault | Keterangan                                                  |
  | --------- | ----------------- | ----------------------------------------------------------- |
  | FIFO      | 10                | Sederhana, tidak adaptif terhadap pola akses                |
