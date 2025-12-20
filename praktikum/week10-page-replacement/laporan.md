@@ -159,6 +159,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
 ---
 ## Tugas
 1. **Implementasi FIFO**
+ 
  | Referensi | Frame (setelah eksekusi) | Hit/Fault        |
  | --------- | ------------------------ | ---------------- |
  | 7         | 7 - -                    | Fault            |
@@ -177,7 +178,8 @@ print_result("LRU Simulation", lru_result, lru_fault)
  Hasil FIFO:
  Page Fault = 10
  Page Hit = 3
-## Implementasi LRU
+2. **Implementasi LRU**
+ 
  | Referensi | Frame (setelah eksekusi) | Hit/Fault                     |
  | --------- | ------------------------ | ----------------------------- |
  | 7         | 7 - -                    | Fault                         |
@@ -196,7 +198,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
  Hasil LRU:
  Page Fault = 9
  Page Hit = 4
-## Analisis Perbandingan
+3. **Analisis Perbandingan**
  | Algoritma | Jumlah Page Fault | Keterangan                                                  |
  | --------- | ----------------- | ----------------------------------------------------------- |
  | FIFO      | 10                | Sederhana, tidak adaptif terhadap pola akses                |
