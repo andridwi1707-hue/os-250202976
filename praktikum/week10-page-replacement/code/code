@@ -1,0 +1,72 @@
+
+reference_string = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
+frame_size = 3
+
+
+
+def simulate_fifo(reference, frame_size):
+    frames = []
+    page_fault = 0
+    result = []
+
+    for page in reference:
+        if page in frames:
+            status = "Hit"
+        else:
+            status = "Fault"
+            page_fault += 1
+            if len(frames) < frame_size:
+                frames.append(page)
+            else:
+                frames.pop(0)
+                frames.append(page)
+
+        result.append((page, frames.copy(), status))
+
+    return page_fault, result
+
+
+
+def simulate_lru(reference, frame_size):
+    frames = []
+    page_fault = 0
+    last_used = {}
+    result = []
+
+    for time, page in enumerate(reference):
+        if page in frames:
+            status = "Hit"
+        else:
+            status = "Fault"
+            page_fault += 1
+
+            if len(frames) < frame_size:
+                frames.append(page)
+            else:
+                # Cari halaman yang paling lama tidak digunakan
+                lru_page = min(frames, key=lambda p: last_used[p])
+                frames[frames.index(lru_page)] = page
+
+        last_used[page] = time
+        result.append((page, frames.copy(), status))
+
+    return page_fault, result
+
+
+
+fifo_fault, fifo_result = simulate_fifo(reference_string, frame_size)
+lru_fault, lru_result = simulate_lru(reference_string, frame_size)
+
+
+
+def print_result(title, data, faults):
+    print(f"\n{title}")
+    print("Page\tFrame\t\tStatus")
+    print("-" * 30)
+    for page, frame, status in data:
+        print(f"{page}\t{frame}\t{status}")
+    print(f"Total Page Fault = {faults}")
+
+
+print_result("FIFO Simulation", fifo_result, fifo_fault)
+print_result("LRU Simulation", lru_result, lru_fault)
