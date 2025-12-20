@@ -158,7 +158,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
 
 ---
 ## Tugas
-1.  Implementasi FIFO
+# Implementasi FIFO
 | Referensi | Frame (setelah eksekusi) | Hit/Fault        |
 | --------- | ------------------------ | ---------------- |
 | 7         | 7 - -                    | Fault            |
@@ -177,7 +177,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
 Hasil FIFO:
 Page Fault = 10
 Page Hit = 3
-2. Implementasi LRU
+# Implementasi LRU
 | Referensi | Frame (setelah eksekusi) | Hit/Fault                     |
 | --------- | ------------------------ | ----------------------------- |
 | 7         | 7 - -                    | Fault                         |
@@ -196,22 +196,21 @@ Page Hit = 3
 Hasil LRU:
 Page Fault = 9
 Page Hit = 4
-3. Eksekusi
 ![Screenshot hasil](screenshots/Screenshot%202025-12-20%20223307.png)
-4. Analisis Perbandingan
+5. Analisis Perbandingan
 | Algoritma | Jumlah Page Fault | Keterangan                                                  |
 | --------- | ----------------- | ----------------------------------------------------------- |
 | FIFO      | 10                | Sederhana, tidak adaptif terhadap pola akses                |
 | LRU       | 9                 | Lebih adaptif, mempertahankan halaman yang sering digunakan |
 Analisis Perbedaan Page Fault:
 Mengapa jumlahnya berbeda?
-- FIFO hanya melihat urutan masuk
-- LRU melihat pola penggunaan aktual
-- Pada reference string ini, beberapa halaman seperti 0, 2, dan 3 sering digunakan kembali → LRU lebih “cerdas”   mempertahankannya
+ FIFO hanya melihat urutan masuk
+ LRU melihat pola penggunaan aktual
+ Pada reference string ini, beberapa halaman seperti 0, 2, dan 3 sering digunakan kembali → LRU lebih “cerdas”   mempertahankannya
 Algoritma paling efisien:
-- LRU lebih efisien, karena:
-- Page fault lebih sedikit
-- Lebih sesuai dengan prinsip locality of reference
+ LRU lebih efisien, karena:
+-Page fault lebih sedikit
+-Lebih sesuai dengan prinsip locality of reference
 Mendekati perilaku optimal (OPT), walau lebih kompleks diimplementasikan
 ---
 
