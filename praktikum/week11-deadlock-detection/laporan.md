@@ -6,7 +6,7 @@ Topik: [Tuliskan judul top"]
 
 ## Identitas
 - **Nama**  : [Andri Dwi Yuliyanto]  
-- **NIM**   : [NIM Mahasiswa]  
+- **NIM**   : [250202976]  
 - **Kelas** : [1IKRB]
 
 ---
@@ -21,8 +21,7 @@ Tuliskan tujuan praktikum minggu ini.
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
-
+Deadlock dalam sistem operasi adalah kondisi ketika dua atau lebih proses saling menunggu sumber daya yang sedang dipegang proses lain sehingga tidak ada satu pun proses yang dapat melanjutkan eksekusi. Deteksi deadlock dilakukan dengan menganalisis hubungan ketergantungan antara proses dan resource, salah satunya menggunakan wait-for graph yang merepresentasikan proses sebagai simpul dan hubungan tunggu sebagai sisi. Jika pada graf tersebut terbentuk siklus, maka sistem berada dalam kondisi deadlock. Secara teori, deadlock hanya dapat terjadi apabila empat kondisi terpenuhi secara bersamaan, yaitu mutual exclusion, hold and wait, no preemption, dan circular wait. Pendekatan deteksi deadlock bertujuan mengidentifikasi kondisi ini agar sistem dapat mengambil tindakan pemulihan yang tepat.
 ---
 
 ## Langkah Praktikum
@@ -73,9 +72,46 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+# Data proses: (Allocation, Request)
+processes = {
+    "P1": ("R1", "R2"),
+    "P2": ("R2", "R3"),
+    "P3": ("R3", "R1")
+}
+
+# Resource -> pemilik proses
+owner = {alloc: p for p, (alloc, _) in processes.items()}
+
+# Bangun Wait-For Graph
+wfg = {}
+for p, (_, req) in processes.items():
+    if req in owner:
+        wfg[p] = owner[req]
+
+visited, stack, deadlock = set(), set(), set()
+
+def dfs(p):
+    if p in stack:
+        deadlock.update(stack)
+        return
+    if p in visited:
+        return
+    visited.add(p)
+    stack.add(p)
+    if p in wfg:
+        dfs(wfg[p])
+    stack.remove(p)
+
+for p in wfg:
+    dfs(p)
+
+# Output
+if deadlock:
+    print("Sistem DEADLOCK")
+    print("Proses terlibat:", deadlock)
+else:
+    print("Tidak terjadi deadlock")
+
 ```
 
 ---
@@ -120,42 +156,43 @@ dmesg | head
   | P1     | R1         | R2      | Deadlock |
   | P2     | R2         | R3      | Deadlock |
   | P3     | R3         | R1      | Deadlock |
-
+3. **Narasi Hasil Analisis**
+Berdasarkan hasil simulasi dan analisis manual, sistem berada dalam kondisi deadlock. Setiap proses memegang satu resource dan menunggu resource lain yang sedang dipegang oleh proses berbeda, sehingga membentuk circular wait. Karena resource bersifat eksklusif, tidak dapat diambil paksa, dan setiap proses menahan resource sambil menunggu resource lain, maka keempat kondisi deadlock terpenuhi. Akibatnya, tidak ada proses yang dapat melanjutkan eksekusi.
 ---
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/Screenshot%202025-12-20%20235014.png)
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
-
+Hasil praktik menunjukkan bahwa sistem mengalami deadlock karena terdapat siklus ketergantungan antar proses, di mana setiap proses menahan satu resource dan menunggu resource lain yang dipegang proses lain. Deteksi program dan analisis manual memberikan hasil yang sama, sehingga membuktikan bahwa kondisi deadlock terjadi sesuai dengan teori.
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-
+1. Terjadi siklus ketergantungan antar proses sehingga sistem berada dalam kondisi deadlock.
+2. Semua proses saling menunggu resource yang sedang dipegang proses lain.
+3. Hasil simulasi program sesuai dengan analisis teori deadlock.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Apa perbedaan antara deadlock prevention, avoidance, dan detection?]  
+   **Jawaban:Deadlock prevention mencegah sejak awal, avoidance menghindari dengan alokasi aman, dan detection mendeteksi lalu memulihkan setelah terjadi.**  
+2. [Mengapa deteksi deadlock tetap diperlukan dalam sistem operasi?]  
+   **Jawaban:Deteksi deadlock tetap diperlukan karena tidak semua sistem dapat mencegah atau menghindari deadlock tanpa mengorbankan efisiensi, sehingga deadlock dibiarkan terjadi dan kemudian dideteksi agar sistem dapat melakukan pemulihan dan tetap berjalan normal.**  
+3. [Apa kelebihan dan kekurangan pendekatan deteksi deadlock?]  
+   **Jawaban:Kelebihannya lebih efisien dan fleksibel, sedangkan kekurangannya deadlock baru ditangani setelah terjadi dan memerlukan proses pemulihan.**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
+Memahami materi yang begitu membingungkan  
 - Bagaimana cara Anda mengatasinya?  
-
+Menggunakan analogi agar mudah dipahami
 ---
 
 **Credit:**  
