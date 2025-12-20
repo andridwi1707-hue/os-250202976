@@ -158,7 +158,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
 
 ---
 ## Tugas
-# Implementasi FIFO
+## Implementasi FIFO
 | Referensi | Frame (setelah eksekusi) | Hit/Fault        |
 | --------- | ------------------------ | ---------------- |
 | 7         | 7 - -                    | Fault            |
@@ -177,7 +177,7 @@ print_result("LRU Simulation", lru_result, lru_fault)
 Hasil FIFO:
 Page Fault = 10
 Page Hit = 3
-# Implementasi LRU
+## Implementasi LRU
 | Referensi | Frame (setelah eksekusi) | Hit/Fault                     |
 | --------- | ------------------------ | ----------------------------- |
 | 7         | 7 - -                    | Fault                         |
@@ -196,8 +196,7 @@ Page Hit = 3
 Hasil LRU:
 Page Fault = 9
 Page Hit = 4
-![Screenshot hasil](screenshots/Screenshot%202025-12-20%20223307.png)
-5. Analisis Perbandingan
+## Analisis Perbandingan
 | Algoritma | Jumlah Page Fault | Keterangan                                                  |
 | --------- | ----------------- | ----------------------------------------------------------- |
 | FIFO      | 10                | Sederhana, tidak adaptif terhadap pola akses                |
@@ -216,7 +215,7 @@ Mendekati perilaku optimal (OPT), walau lebih kompleks diimplementasikan
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/Screenshot%202025-12-20%20223307.png)
 
 ---
 
