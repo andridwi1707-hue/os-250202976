@@ -23,7 +23,7 @@ Contoh:
 
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
-Virtual Machine (VM) merupakan teknologi yang memungkinkan menjalankan sistem operasi lain di dalam satu komputer fisik (host). Pada praktikum ini digunakan aplikasi VirtualBox/VMware sebagai media virtualisasi. Sebelum instalasi, fitur virtualisasi hardware (VT-x/AMD-V) harus diaktifkan melalui BIOS agar VM dapat berjalan dengan optimal.
+> Virtual Machine (VM) merupakan teknologi yang memungkinkan menjalankan sistem operasi lain di dalam satu komputer fisik (host). Pada praktikum ini digunakan aplikasi VirtualBox/VMware sebagai media virtualisasi. Sebelum instalasi, fitur virtualisasi hardware (VT-x/AMD-V) harus diaktifkan melalui BIOS agar VM dapat berjalan dengan optimal.
 ---
 
 ## Langkah Praktikum
@@ -84,12 +84,12 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-Virtual Machine menyediakan isolasi antara sistem host dan guest sehingga aktivitas pada OS guest tidak memengaruhi host. VM berfungsi sebagai sandbox yang membatasi akses sistem guest terhadap resource host. Selain itu, penerapan hardening OS pada guest dan host menambah lapisan keamanan, sehingga sistem lebih aman dari gangguan atau serangan.
+ - Virtual Machine menyediakan isolasi antara sistem host dan guest sehingga aktivitas pada OS guest tidak memengaruhi host. VM berfungsi sebagai sandbox yang membatasi akses sistem guest terhadap resource host. Selain itu, penerapan hardening OS pada guest dan host menambah lapisan keamanan, sehingga sistem lebih aman dari gangguan atau serangan.
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa teknologi virtualisasi memungkinkan menjalankan sistem operasi guest pada satu komputer fisik tanpa mengganggu sistem host. Proses instalasi virtual machine dan sistem operasi guest dapat dilakukan dengan baik setelah fitur virtualisasi diaktifkan serta resource seperti CPU, RAM, dan storage dikonfigurasi. Namun, pada pelaksanaan praktikum ini terdapat kendala berupa keterbatasan RAM laptop yang digunakan, sehingga performa virtual machine menjadi kurang optimal dan beberapa proses tidak dapat berjalan dengan lancar. Meskipun demikian, praktikum ini tetap memberikan pemahaman mengenai pengaruh alokasi resource terhadap kinerja virtual machine serta pentingnya isolasi sistem dalam meningkatkan keamanan melalui konsep virtualisasi.
+ - Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa teknologi virtualisasi memungkinkan menjalankan sistem operasi guest pada satu komputer fisik tanpa mengganggu sistem host. Proses instalasi virtual machine dan sistem operasi guest dapat dilakukan dengan baik setelah fitur virtualisasi diaktifkan serta resource seperti CPU, RAM, dan storage dikonfigurasi. Namun, pada pelaksanaan praktikum ini terdapat kendala berupa keterbatasan RAM laptop yang digunakan, sehingga performa virtual machine menjadi kurang optimal dan beberapa proses tidak dapat berjalan dengan lancar. Meskipun demikian, praktikum ini tetap memberikan pemahaman mengenai pengaruh alokasi resource terhadap kinerja virtual machine serta pentingnya isolasi sistem dalam meningkatkan keamanan melalui konsep virtualisasi.
 ---
 
 ## Quiz
