@@ -21,7 +21,11 @@ Topik: ["Laporan IMRAD"]
 
 ## Pendahuluan (Introduction)
 
-Docker merupakan teknologi container yang memungkinkan aplikasi berjalan secara terisolasi dengan penggunaan sumber daya yang efisien (Merkel, 2014). Namun, container yang berjalan tanpa batasan dapat mengonsumsi CPU dan memori secara berlebihan sehingga menurunkan performa sistem host. Oleh karena itu, Docker menyediakan mekanisme pembatasan sumber daya (*resource limit*) untuk mengontrol penggunaan CPU dan memori pada setiap container (Pahl, 2015).
+Docker merupakan teknologi container yang memungkinkan aplikasi berjalan secara terisolasi dengan penggunaan sumber daya yang efisien (Merkel, 2014). Dalam lingkungan praktikum sistem operasi dan komputasi modern, Docker banyak digunakan karena kemampuannya menjalankan aplikasi secara ringan dibandingkan mesin virtual.
+
+Namun, container yang dijalankan tanpa pembatasan sumber daya berpotensi menggunakan CPU dan memori secara berlebihan, terutama pada perangkat dengan spesifikasi terbatas. Kondisi ini dapat menyebabkan sistem host menjadi lambat, tidak responsif, bahkan mengalami kegagalan saat menjalankan beberapa container secara bersamaan.
+
+Oleh karena itu, Docker menyediakan mekanisme pembatasan sumber daya (resource limit) untuk mengontrol penggunaan CPU dan memori pada setiap container (Pahl, 2015). Melalui praktikum ini, dilakukan pengujian pembatasan sumber daya guna memahami pengaruhnya terhadap kinerja container dan stabilitas sistem host.
 
 **Tujuan Praktikum**:
 
@@ -87,8 +91,12 @@ Pengukuran dilakukan dengan mencatat nilai CPU (%) dan penggunaan memori (MB) ya
 | Dengan Limit      | < 50%   | ± 450 MB    |
 
 ### Bukti Eksekusi
-
+**Tabel Docker Stats**
 ![Screenshot hasil](screenshots/Screenshot%202026-01-07%20152800.png)
+**Tabel Container Dengan Limit**
+![Screenshot hasil](screenshots/docker%20(2).png)
+**Tabel Container Tanpa Limit**
+![Screenshot hasil](screenshots/docker%20(3).png)
 
 
 ### Ringkasan Temuan
